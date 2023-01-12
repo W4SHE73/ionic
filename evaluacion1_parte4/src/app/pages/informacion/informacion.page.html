@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>informacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Hola!, mi nombre es: </ion-card-title>
+        <ion-card-subtitle>Danilo Ogaz</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Estudiante de ingeniería en informática en DUOC UC - sede Maipú.
+    <p>Ex-Capitán CITT y actual campeón nacional de ciberseguridad en DUOC UC 2022,</p>
+    <p>En mi tiempo libre me gusta competir en CTF's, lamentablemente me quedé sin trabajo</p>
+    <p>así que, también dedicó parte de mi tiempo a las inversiones y libertad financiera.</p>
+    <p>Por último, junto a mi team Renard hemos logrado un renombre en la industria de la seguridad informática.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <img alt="Silhouette of mountains" src="../../../assets/img/8_8.jpg" />
+      <ion-card-header>
+        <ion-card-title>8.8 REAL 2022</ion-card-title>
+        <ion-card-subtitle>Cine Arte Normandie - Santiago, Chile.</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        foto mia junto a Gabriel Bergel, organizador y fundador 8.8 Computer Security Conference
+      </ion-card-content>
+    </ion-card>
+
+    <ion-slides page="true">
+
+      <ion-slide *ngFor="let slide of slides">
+        <div class="slide-img-padding">
+          <img [src]="slide.img"/>
+        </div>
+        <div>
+          <h3 [innerHTML]="slide.titulo"></h3>
+        </div>
+      </ion-slide>
+
+     
+    </ion-slides>
+
+   
+<!--
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ultimas Actvidades</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img alt="Silhouette of mountains" src="../../../assets/img/4D4.jpg" />
+            </ion-thumbnail>
+            <ion-label>3er Lugar en el 4D4 Challenge v4</ion-label>
+          </ion-item>
+    
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img alt="Silhouette of mountains" src="../../../assets/img/duocCTF.jpg" />
+            </ion-thumbnail>
+            <ion-label>1er Lugar Nacional en Ciberseguridad DUOC UC 2022</ion-label>
+          </ion-item>
+    
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img alt="Silhouette of mountains" src="../../../assets/img/usachbadge.png" />
+            </ion-thumbnail>
+            <ion-label>Ultimo curso aprobado</ion-label>
+          </ion-item>
+    
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    -->
+
+</ion-content>
