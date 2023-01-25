@@ -10,10 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 //firebase
 import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
-import { environment } from '../environments/environment';
 import {provideAuth, getAuth} from '@angular/fire/auth';
 import {provideFirestore, getFirestore} from '@angular/fire/firestore';
 import { provideStorage, getStorage} from '@angular/fire/storage';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,12 +22,10 @@ import { provideStorage, getStorage} from '@angular/fire/storage';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)), //ojito con esta
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore (() => getFirestore()),
     provideStorage (() => getStorage()),
-
     ],
   providers: [
     {

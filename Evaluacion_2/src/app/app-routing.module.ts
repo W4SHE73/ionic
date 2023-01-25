@@ -17,6 +17,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'inicio',
+    redirectTo: 'inicio',
+    pathMatch: 'full'
+  },
+  {
     path: 'divisas',
     redirectTo: 'divisas',
     pathMatch: 'full'
@@ -31,11 +36,7 @@ const routes: Routes = [
     redirectTo: 'informacion',
     pathMatch: 'full'
   },
-  {
-    path: 'inicio',
-    redirectTo: 'inicio',
-    pathMatch: 'full'
-  },
+  
   {
     path: 'noticias',
     redirectTo: 'noticias',
@@ -47,13 +48,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'register',
-    redirectTo: 'register',
+    path: 'dashboard',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
-    path: 'dashboard',
-    redirectTo: 'dashboard',
+    path: 'malware',
+    redirectTo: 'malware',
     pathMatch: 'full'
   },
   {
@@ -61,8 +62,6 @@ const routes: Routes = [
     redirectTo: 'nf404',
     pathMatch: 'full'
   },
-
-  
   {
     path: 'inicio',
     loadChildren: () => 
@@ -96,15 +95,14 @@ const routes: Routes = [
       import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
+    path: 'malware',
+    loadChildren: () => import('./pages/malware/malware.module').then( m => m.MalwarePageModule)
+  },
+  {
     path: 'login',
     loadChildren: () => 
       import('./pages/login/login.module').then( m => m.LoginPageModule),
     
-  },
-  {
-    path: 'register',
-    loadChildren: () => 
-      import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'nf404',

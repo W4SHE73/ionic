@@ -12,7 +12,6 @@ import { AuthServiceTsService } from '../../services/auth.service.ts.service';
 export class LoginPage implements OnInit {
   
 	credentials: FormGroup;
-
 	constructor(
 		private fb: FormBuilder,
 		private loadingController: LoadingController,
@@ -20,10 +19,6 @@ export class LoginPage implements OnInit {
 		private authService: AuthServiceTsService,
 		private router: Router
 	) {}
-
-	// Easy access for form fields
-	get email() { return this.credentials.get('email'); }
-	get password() { return this.credentials.get('password'); }
 
 	ngOnInit() {
 		this.credentials = this.fb.group({
@@ -40,7 +35,7 @@ export class LoginPage implements OnInit {
 		await loading.dismiss();
 
 		if (user) {
-			this.router.navigateByUrl('/login', { replaceUrl: true });
+			this.router.navigateByUrl('/inicio', { replaceUrl: true });
 		} else {
 			this.showAlert('Registration failed', 'Please try again!');
 		}
@@ -54,9 +49,9 @@ export class LoginPage implements OnInit {
 		await loading.dismiss();
 
 		if (user) {
-			this.router.navigateByUrl('/inicio', { replaceUrl: true });
+			this.router.navigate(['inicio'], { replaceUrl: true });
 		} else {
-			this.showAlert('Login failed', 'Please try again!');
+			this.showAlert('Ups!!!', 'datos incorrectos, intente nuevamente');
 		}
 	}
 
