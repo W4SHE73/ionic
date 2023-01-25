@@ -49,7 +49,7 @@ ir a la carpeta del archivo: cd nombreporyecto
 -se agrego un parametro al tsconfig.json -> "noImplicitAny": false : https://stackoverflow.com/questions/37032857/error-ts7008-member-summary-implicitly-has-an-any-type
 
 #Firebase
-npm install firebase @angular/fire --save
-npm i @capacitor/camera
-npm i @ionic/pwa-elements
-ng add @angular/fire
+- npm install firebase @angular/fire --save
+- npm i @capacitor/camera
+- npm i @ionic/pwa-elements
+- ng add @angular/fire
