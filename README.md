@@ -47,3 +47,9 @@ ir a la carpeta del archivo: cd nombreporyecto
 - mas problemas: https://stackoverflow.com/questions/66052132/angular-error-ts2564-property-users-has-no-initializer-and-is-not-definitely
 - mas y mas problem: https://bobbyhadz.com/blog/typescript-type-null-is-not-assignable-to-type-string
 -se agrego un parametro al tsconfig.json -> "noImplicitAny": false : https://stackoverflow.com/questions/37032857/error-ts7008-member-summary-implicitly-has-an-any-type
+
+#Firebase
+npm install firebase @angular/fire --save
+npm i @capacitor/camera
+npm i @ionic/pwa-elements
+ng add @angular/fire
