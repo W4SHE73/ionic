@@ -1,5 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {
+   redirectUnauthorizedTo,
+   redirectLoggedInTo,
+   canActivate,
+  } from '@angular/fire/auth-guard';
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['inicio']);
+
 
 const routes: Routes = [
   {
@@ -53,41 +62,54 @@ const routes: Routes = [
     pathMatch: 'full'
   },
 
-  {
-    path: 'noticias',
-    loadChildren: () => import('./pages/noticias/noticias.module').then( m => m.NoticiasPageModule)
-  },
+  
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => 
+      import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
+      ...canActivate(redirectLoggedInToHome) 
   },
   {
     path: 'informacion',
-    loadChildren: () => import('./pages/informacion/informacion.module').then( m => m.InformacionPageModule)
+    loadChildren: () => 
+      import('./pages/informacion/informacion.module').then( m => m.InformacionPageModule),
+    ...canActivate(redirectUnauthorizedToLogin)
   },
   {
     path: 'eltiempo',
-    loadChildren: () => import('./pages/eltiempo/eltiempo.module').then( m => m.EltiempoPageModule)
+    loadChildren: () =>
+      import('./pages/eltiempo/eltiempo.module').then( m => m.EltiempoPageModule)
   },
   {
     path: 'divisas',
-    loadChildren: () => import('./pages/divisas/divisas.module').then( m => m.DivisasPageModule)
+    loadChildren: () => 
+      import('./pages/divisas/divisas.module').then( m => m.DivisasPageModule)
+  },
+  {
+    path: 'noticias',
+    loadChildren: () => 
+      import('./pages/noticias/noticias.module').then( m => m.NoticiasPageModule)
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    loadChildren: () => 
+      import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => 
+      import('./pages/login/login.module').then( m => m.LoginPageModule),
+    
   },
   {
     path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => 
+      import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'nf404',
-    loadChildren: () => import('./pages/nf404/nf404.module').then( m => m.Nf404PageModule)
+    loadChildren: () => 
+      import('./pages/nf404/nf404.module').then( m => m.Nf404PageModule)
   },
   
 ];

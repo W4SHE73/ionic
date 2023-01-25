@@ -9,12 +9,12 @@ export const environment = {
   URL_base2: 'https://api.openweathermap.org/data/2.5/',
   //
   firebaseConfig : {
-    apiKey: "AIzaSyA_24UdMOBK6kx-i3ySbjneQLLbVjd0I2I",
-    authDomain: "tav3-949bd.firebaseapp.com",
-    projectId: "tav3-949bd",
-    storageBucket: "tav3-949bd.appspot.com",
-    messagingSenderId: "846245501907",
-    appId: "1:846245501907:web:e58400de6398eed7816d26"
+    apiKey: "AIzaSyCW6-MXooIFkxS6ULvKv1wiElE-HkFAxow",
+    authDomain: "evaluacion2-67f42.firebaseapp.com",
+    projectId: "evaluacion2-67f42",
+    storageBucket: "evaluacion2-67f42.appspot.com",
+    messagingSenderId: "708399448475",
+    appId: "1:708399448475:web:3c0906948adfe7a35ee13e",
+    measurementId: "G-ZHSSQECVLM"
   }
 };
-
