@@ -53,3 +53,4 @@ ir a la carpeta del archivo: cd nombreporyecto
 - npm i @capacitor/camera
 - npm i @ionic/pwa-elements
 - ng add @angular/fire
+- npm install --save-dev @angular-devkit/build-angular
