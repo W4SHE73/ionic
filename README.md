@@ -54,4 +54,4 @@ ir a la carpeta del archivo: cd nombreporyecto
 - npm i @ionic/pwa-elements
 - ng add @angular/fire
 - npm install --save-dev @angular-devkit/build-angular
-- npm install --save @ionic/storage
+- npm install --save @ionic/storage-angular 
