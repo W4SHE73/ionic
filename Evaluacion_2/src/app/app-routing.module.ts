@@ -7,7 +7,7 @@ import {
   } from '@angular/fire/auth-guard';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
-const redirectLoggedInToHome = () => redirectLoggedInTo(['inicio']);
+//const redirectLoggedInToHome = () => redirectLoggedInTo(['']);
 
 
 const routes: Routes = [
@@ -66,7 +66,7 @@ const routes: Routes = [
     path: 'inicio',
     loadChildren: () => 
       import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
-      ...canActivate(redirectLoggedInToHome) 
+      //...canActivate(redirectLoggedInToHome) 
   },
   {
     path: 'informacion',
