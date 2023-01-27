@@ -55,3 +55,4 @@ ir a la carpeta del archivo: cd nombreporyecto
 - ng add @angular/fire
 - npm install --save-dev @angular-devkit/build-angular
 - npm install --save @ionic/storage-angular 
+- npm install --save @ionic/storage
