@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from '@angular/fire/auth';
+import { getuid } from 'process';
 
 
 @Injectable({ providedIn: 'root' })
@@ -33,4 +34,7 @@ export class AuthServiceTsService {
 
   logout() { return signOut(this.auth);}
 
+ 
 }
+
+

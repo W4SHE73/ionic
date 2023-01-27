@@ -1,9 +1,69 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>divisas</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon class="menu" slot="start" name="menu-outline"></ion-icon>
+       </ion-button>
+      </ion-buttons>
+    <ion-title>Divisas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div id="slcContainer">
+    <ion-row>
+        <ion-col size="12" size-md>
+            <div class="titleSelect">Ingrece Monto</div>
+            <ion-item>
+                <ion-input [(ngModel)]="curAmount" type="number" inputmode="decimal"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12" size-md>
+            <div class="titleSelect">Seleccionar Divisa</div>
+            <div style="display: flex;">
+                <ion-searchbar showClearButton="never" (ionFocus)="isOpen=true" id="searchCurr" placeholder="Haga click y selecione divisa" value="{{seleCur}}"></ion-searchbar>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-button expand="block" (click)="getRates()">Conversor</ion-button>
+    <ion-modal [isOpen]="isOpen" (didDismiss)="isOpen=false">
+        <ng-template>
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>Listado de Divisas</ion-title>
+                    <ion-buttons slot="end">
+                        <ion-button (click)="isOpen=false">Close</ion-button>
+                    </ion-buttons>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                <ion-list>
+                    <ion-radio-group (ionChange)="selectedCur($event)" value="USD">
+                        <ion-list-header>
+                            <ion-label>Nombre</ion-label>
+                        </ion-list-header>
+                        <ion-item *ngFor="let i of symbols">
+                            <ion-label>{{i.code}} - {{i.desc}}</ion-label>
+                            <ion-radio slot="start" value="{{i.code}}|{{i.desc}}"></ion-radio>
+                        </ion-item>
+                    </ion-radio-group>
+                </ion-list>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+    <div>
+        <ion-card *ngFor="let d of convData">
+            <div class="listRates">
+                <div class="ratesDetails">
+                    <ion-card-subtitle>
+                        {{d.name}} - {{d.desc}}
+                    </ion-card-subtitle>
+                    <ion-card-subtitle style="color:green;">
+                        {{d.value}}
+                    </ion-card-subtitle>
+                </div>
+            </div>
+        </ion-card>
+    </div>
+    </div>
 </ion-content>

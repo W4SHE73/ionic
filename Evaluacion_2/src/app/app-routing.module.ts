@@ -48,13 +48,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'dashboard',
-    redirectTo: 'dashboard',
+    path: 'malware',
+    redirectTo: 'malware',
     pathMatch: 'full'
   },
   {
-    path: 'malware',
-    redirectTo: 'malware',
+    path: 'profile',
+    redirectTo: 'profile',
     pathMatch: 'full'
   },
   {
@@ -90,11 +90,6 @@ const routes: Routes = [
       import('./pages/noticias/noticias.module').then( m => m.NoticiasPageModule)
   },
   {
-    path: 'dashboard',
-    loadChildren: () => 
-      import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },
-  {
     path: 'malware',
     loadChildren: () => import('./pages/malware/malware.module').then( m => m.MalwarePageModule)
   },
@@ -105,10 +100,15 @@ const routes: Routes = [
     
   },
   {
+    path: 'modal',
+    loadChildren: () => import('./pages/modal/modal.module').then( m => m.ModalPageModule)
+  },
+  {
     path: 'nf404',
     loadChildren: () => 
       import('./pages/nf404/nf404.module').then( m => m.Nf404PageModule)
   },
+  
   
 ];
 
